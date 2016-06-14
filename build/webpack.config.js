@@ -22,7 +22,11 @@ module.exports = {
         chunkFilename: '[id].[chunkhash].js'
     },
     resolve: {
-        extensions: ['', '.js', '.vue']
+        extensions: ['', '.js', '.vue'],
+        alias: {
+            'coms': path.resolve(__dirname, '../components'),
+            'stls': path.resolve(__dirname, '../styles'),
+        }
     },
     module: {
 
