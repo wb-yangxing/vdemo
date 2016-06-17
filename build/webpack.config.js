@@ -1,7 +1,7 @@
 // nodejs 中的path模块
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var pageConfig = require('./page.config');
 
 module.exports = {
@@ -25,7 +25,7 @@ module.exports = {
         extensions: ['', '.js', '.vue'],
         alias: {
             'coms': path.resolve(__dirname, '../components'),
-            'stls': path.resolve(__dirname, '../styles'),
+            'styles': path.resolve(__dirname, '../styles')
         }
     },
     module: {
@@ -48,6 +48,10 @@ module.exports = {
                     limit: 10000,
                     name: '[name].[ext]?[hash:7]'
                 }
+            },
+            {
+               test: /.less$/,
+               loader: ExtractTextPlugin.extract('style', 'css!less')
             }
         ]
     },
