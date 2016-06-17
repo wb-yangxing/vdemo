@@ -53,8 +53,9 @@ module.exports = {
                test: /.less$/,
                loader: ExtractTextPlugin.extract('style', 'css!less')
             }
-        ]
+        ],
     },
+    devtool: 'source-map',
     // plugins: [
     //     new HtmlWebpackPlugin({
     //         filename: '../index.html',

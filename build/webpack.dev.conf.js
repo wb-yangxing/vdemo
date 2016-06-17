@@ -1,5 +1,6 @@
 
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var webpack = require('webpack');
 // 引入基本配置
@@ -20,7 +21,8 @@ config.output.publicPath = '/';
 config.plugins = [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin("vendors.css")
 ].concat(pageConfig.htmlPlugunDev);
 // var devClient = 'webpack-hot-middleware/client';
 var devClient = './build/dev-client';
