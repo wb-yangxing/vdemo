@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Favlist from './components/Favlist'
-import main from 'styles/reset.less'
-import XHeader from './components/Header'
+import XHeader from 'coms/header'
+import main from 'styles/bus/bus-base.less'
 
 new Vue({
 	el: 'body',

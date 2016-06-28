@@ -31,6 +31,7 @@ module.exports = {
     module: {
 
         loaders: [
+            {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
             // 使用vue-loader 加载 .vue 结尾的文件
             {
                 test: /\.vue$/,
@@ -42,8 +43,8 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
-                loader: 'url',
+                test: /\.(png|jpg|gif|svg|ttf)$/,
+                loader: 'url-loader?limit=8192',
                 query: {
                     limit: 10000,
                     name: '[name].[ext]?[hash:7]'
@@ -55,7 +56,7 @@ module.exports = {
             }
         ],
     },
-    devtool: 'source-map',
+    // devtool: 'source-map',
     // plugins: [
     //     new HtmlWebpackPlugin({
     //         filename: '../index.html',

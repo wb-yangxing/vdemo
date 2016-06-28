@@ -1,13 +1,34 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" style="font-size:20px;">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
 		<title>首页</title>
+		<script>
+	      (function(doc, win) {
+	          var docEl = doc.documentElement,
+	              resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	              recalc = function() {
+	                  var clientWidth = docEl.clientWidth;
+	                  if (!clientWidth) return;
+	                  if( clientWidth > 500){
+	                      clientWidth = 500;
+	                  }
+	                  var fontSize = 20 * (clientWidth / 375);
+	                  docEl.style.fontSize = fontSize + 'px';
+	                  var dpi = window.devicePixelRatio;
+	                  docEl.setAttribute('data-dpi', dpi);
+	              };
+	          if (!doc.addEventListener) return;
+	          win.addEventListener(resizeEvt, recalc, false);
+	          doc.addEventListener('DOMContentLoaded', recalc, false);
+	      })(document, window);
+	  </script>
 	</head>
 	<body>
 		<!-- vue的组件以自定义标签的形式使用 -->
-		<favlist></favlist>
-
+		<x-header :title="title"></x-header>
+		<recommend></recommend>
+		<list></list>
 	</body>
 </html>

@@ -4,7 +4,6 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
 		<title>首页</title>
-		<link rel="stylesheet" href="//webresource.c-ctrip.com/styles/h5/common/n_main.css?v=20160608_13_30">
 		<script>
 	      (function(doc, win) {
 	          var docEl = doc.documentElement,
@@ -29,11 +28,5 @@
 	<body>
 		<!-- vue的组件以自定义标签的形式使用 -->
 		<x-header :title="title"></x-header>
-		<favlist></favlist>
-		<dialog :show.sync="show" class="dialog-demo">
-		     <p class="dialog-title">I'm a Dialog.</p>
-		     <div class="img-box"></div>
-		     <span class="vux-close" @click="show=false"></span>
-	    </dialog>
 	</body>
 </html>

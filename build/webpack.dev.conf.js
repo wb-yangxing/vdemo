@@ -18,6 +18,7 @@ config.output.publicPath = '/';
 //         inject: true
 //     })
 // ];
+config.devtool = "source-map";
 config.plugins = [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
