@@ -1,0 +1,26 @@
+.bus-x-list li.disn{
+	position:relative; padding:.6rem 0 0 .5rem;
+	p{ height:1.2rem; font-size: .8rem;overflow:inherit;}
+	.bus-price{
+		float:right;margin-right:.75rem;color:@txt1;margin-top:-.5rem;
+		dfn,span{color:#F95B40}
+		strong{color:#F95B40;font-size:1rem;}
+		span{font-size:.7rem;}
+	}
+	.cpinkgray{ font-size:.6rem;}
+	.disn-count{
+		height:1.85rem;background: #F95B40;text-align:right;margin-top:.5rem;padding-right:.75rem;position:relative;
+		&:before{width:6rem;height:2.05rem;.pseudo;background:url("//pic.c-ctrip.com/h5/train/i-disini.png") no-repeat;background-size:5.4rem 2.05rem;left:0;bottom:0}
+	}
+}
+.countDown{color:#fff;float:right;margin-top:-.2rem}
+.countDown span b{background:#A4210B;padding:0.2rem 0.2rem;margin: 0 .1rem;-moz-border-radius:0.2rem;-webkit-border-radius:0.2rem;border-radius:0.2rem;font-weight:400;
+	&.ms{padding: .2rem .3rem;}
+}
+.countDown span i{color: #A4210B; font-weight: bold;}
+@media only screen and (min-width:1024px){
+    .bus-x-list li.disn p{left:8rem;top:1rem;font-size:1.4rem;line-height:2.5rem;height:2.5rem;}
+	.bus-x-list li.disn .bus-price{right:0.6rem;top:2.4rem;}
+	.countDown{bottom:1.6rem;}
+	.countDown span{font-size:1rem;}
+}

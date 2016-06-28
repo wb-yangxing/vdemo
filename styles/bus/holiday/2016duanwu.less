@@ -1,0 +1,187 @@
+/*节日图标配置*/
+
+@duanwugreen:#2fa14b;
+@duanwuorage:#e77c24;
+
+.duanwuicon{background-image:url("http://pages.ctrip.com/commerce/promote/train/img-2016dw/icon-2016duanwu.png");background-repeat:no-repeat;background-size:10rem 6rem;}
+.duanwubtn{background-image:url("http://pages.ctrip.com/commerce/promote/train/img-2016dw/btn-2016duanwu.png");background-repeat:no-repeat;background-size:8rem 4.5rem}
+
+/*nav*/
+.bus-index-nav .bus-tab li{
+  .tag-blue{background-color:lighten(@duanwugreen, 10%);}
+  &.current{color:@duanwugreen;}
+}
+
+/*bottom*/
+.bus-index-bottom{
+  li{
+    position:relative;margin:.6rem 0 0;
+    .icon-order{
+      &:after{width:2.05rem; height:1.8rem;.pseudo; top:-.35rem;left:50%;margin-left:-1rem;.duanwuicon;background-position: 0 -2.5rem;background-color:#fff;z-index:10;}
+    }
+    .icon-serve{
+      &:after{width:2.05rem; height:1.8rem;.pseudo; top:-.35rem;left:50%;margin-left:-1rem;.duanwuicon;background-position: -2.25rem -2.5rem;background-color:#fff;z-index:10;}
+    }
+    &:active{ color:darken(@duanwugreen, 10%);}
+  }
+}
+
+.bus-index-bottom{
+  li{
+    color:@duanwugreen;
+  }
+}
+
+/*汽车票*/
+.sel-bus-box{
+  li{
+    strong{
+      &:active{ color:@duanwugreen; }
+    }
+  }
+  .city{
+    .icon-fromto{
+      &:before{display:none;}
+      &:after{width:.6rem;height:3.15rem;.pseudo;left:.2rem; top:50%;margin-top:-1.55rem;.duanwuicon;background-position: -8rem -2.5rem}
+    }
+  }
+  .chage{
+    .icon-chage{
+      &:before{display:none;}
+      &:after{width:1.6rem;height:1.5rem;.pseudo;left:50%; top:50%;margin:-.75rem 0 0 -.8rem; .duanwuicon;background-position: -4.5rem -2.5rem}
+    }
+    &:active .icon-chage:after{background-position:-6.25rem -2.5rem ;}
+  }
+  .date{
+    .icon-calendar{
+      &:before{display:none;}
+      &:after{width:1.05rem;height:1rem;.pseudo;left:0rem; top:50%;margin-top:-.5rem;.duanwuicon;background-position: 0 -4.5rem; }
+    }
+  }
+}
+.sel-bus-btn{
+  position:relative;border:2px solid @duanwuorage;background:url("http://pages.ctrip.com/commerce/promote/train/img-2016dw/btn-2016duanwu-mid.png") no-repeat bottom center;background-size:2.9rem .55rem;background-color:@duanwugreen;
+  &:before,&:after{width:3.9rem;height:2.1rem;.pseudo; bottom:0; .duanwubtn;z-index:100}
+  &:before{left:0;background-position:0 0;}
+  &:after{ right:0;background-position:-4rem 0;}
+  &:active{
+    background-color:darken(@duanwugreen, 10%);
+    &:after{left: auto;right:0;top: auto;bottom:0;z-index:100;width:3.9rem;height:2.1rem;background-color:transparent!important;.duanwubtn;background-position:-4rem 0;}
+  }
+}
+
+.index-bus-ent li i{
+  background-color:transparent!important;
+  &:before{display:none;}
+  &.icon-hotel,&.icon-ticket,&.icon-trip,&.icon-groupon{.duanwuicon;}
+  &.icon-hotel{background-position:0 0;}
+  &.icon-ticket{background-position:-2.5rem 0;}
+  &.icon-trip{background-position:-5rem 0;}
+  &.icon-groupon{background-position:-7.5rem 0;}
+}
+
+
+/*机场巴士*/
+.airbus-tab-mod{
+  li.cui-tab-current {color: @duanwugreen;}
+  .cui-tab-scrollbar{background-color:@duanwugreen;}
+}
+.sel-airbus-box{
+  li{
+    strong{
+      &:active{ color:@duanwugreen; }
+    }
+  }
+  .chage{
+    .icon-chage{
+      &:before{display:none;}
+      &:after{width:1.6rem;height:1.5rem;.pseudo;left:50%; top:50%;margin:-.75rem 0 0 -.8rem; .duanwuicon;background-position: -4.5rem -2.5rem}
+    }
+    &:active .icon-chage:after{background-position:-6.25rem -2.5rem ;}
+  }
+  .date{
+    .icon-calendar{
+      &:before{display:none;}
+      &:after{width:1.05rem;height:1rem;.pseudo;left:0rem; top:50%;margin-top:-.5rem;.duanwuicon;background-position: 0 -4.5rem; }
+    }
+  }
+}
+.sel-airbus-btn{
+  position:relative;border:2px solid @duanwuorage;background:url("http://pages.ctrip.com/commerce/promote/train/img-2016dw/btn-2016duanwu-mid.png") no-repeat bottom center;background-size:2.9rem .55rem;background-color:@duanwugreen;
+  &:before,&:after{width:3.9rem;height:2.1rem;.pseudo; bottom:0; .duanwubtn;z-index:100}
+  &:before{left:0;background-position:0 0;}
+  &:after{ right:0;background-position:-4rem 0;}
+  &:active{
+    background-color:#279341;
+    &:after{left: auto;right:0;top: auto;bottom:0;z-index:100;width:3.9rem;height:2.1rem;background-color:transparent!important;.duanwubtn;background-position:-4rem 0;}
+  }
+}
+
+/*景区直达*/
+.sel-mpv-box{
+  li{
+    strong{
+      &:active{ color:@duanwugreen; }
+    }
+  }
+  .city{
+    .icon-fromto{
+      &:before{display:none;}
+      &:after{width:.6rem;height:3.15rem;.pseudo;left:.2rem; top:50%;margin-top:-1.55rem;.duanwuicon;background-position: -8rem -2.5rem}
+    }
+  }
+  .chage{
+    .icon-chage{
+      &:before{display:none;}
+      &:after{width:1.6rem;height:1.5rem;.pseudo;left:50%; top:50%;margin:-.75rem 0 0 -.8rem; .duanwuicon;background-position: -4.5rem -2.5rem}
+    }
+    &:active .icon-chage:after{background-position:-6.25rem -2.5rem ;}
+  }
+  .date{
+    .icon-calendar{
+      &:before{display:none;}
+      &:after{width:1.05rem;height:1rem;.pseudo;left:0rem; top:50%;margin-top:-.5rem;.duanwuicon;background-position: 0 -4.5rem; }
+    }
+  }
+}
+.sel-mpv-btn{
+  position:relative;border:2px solid @duanwuorage;background:url("http://pages.ctrip.com/commerce/promote/train/img-2016dw/btn-2016duanwu-mid.png") no-repeat bottom center;background-size:2.9rem .55rem;background-color:@duanwugreen;
+  &:before,&:after{width:3.9rem;height:2.1rem;.pseudo; bottom:0; .duanwubtn;z-index:100}
+  &:before{left:0;background-position:0 0;}
+  &:after{ right:0;background-position:-4rem 0;}
+  &:active{
+    background-color:#279341;
+    &:after{left: auto;right:0;top: auto;bottom:0;z-index:100;width:3.9rem;height:2.1rem;background-color:transparent!important;.duanwubtn;background-position:-4rem 0;}
+  }
+}
+
+/*船票*/
+.sel-ship-box{
+  .chage{
+    .rotating(0deg)!important;
+    .icon-chage{
+      &:before{display:none;}
+      &:after{width:1.6rem;height:1.6rem;.pseudo;left:50%; top:50%;margin:-.75rem 0 0 -.8rem; .duanwuicon;background-position: -4.5rem -4.5rem;}
+    }
+    &:active .icon-chage:after{background-position:-6.25rem -4.5rem ;}
+  }
+  .date{
+    .icon-calendar{
+      &:before{display:none;}
+      &:after{width:1.05rem;height:1rem;.pseudo;left:0rem; top:50%;margin-top:-.5rem;.duanwuicon;background-position: 0 -4.5rem; }
+    }
+  }
+}
+.sel-ship-btn{
+  border:2px solid @duanwuorage;background:@duanwugreen;
+  &:before,&:after{width:2.35rem;height:2.1rem;.pseudo; bottom:0; .duanwubtn;z-index:100}
+  &:before{left:0;background-position:0 -2.25rem;}
+  &:after{ right:0;background-position:-2.5rem -2.25rem;}
+  &:active{
+    background-color:#279341;
+    &:after{left: auto;right:0;top: auto;bottom:0;z-index:100;width:2.35rem;height:2.1rem;background-color:transparent!important;.duanwubtn;background-position:-2.5rem -2.25rem;}
+  }
+}
+/*tit*/
+.sel-mpv-recommend .tit:before{background:@duanwugreen}
+.ship-index-show .tit:before{background:@duanwugreen}

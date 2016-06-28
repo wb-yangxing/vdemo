@@ -1,1 +1,305 @@
-@color: #FFF;
+/*less定义*/
+@blue:#099fde;
+@bluetrans:rgba(0,154,220,0.95);
+@lightblue:#52bce8;
+@red:#ff4646;
+@pink:#fe6a60;
+@orage:#ff9a14;
+@price:#ff9a14;
+@yellow:#fbd46c;
+@pinkyellow:#fff8e6;
+@trainannounline:#f3d499;
+@trainannounbg:#fff8de;
+@green:#2fc047;
+@dark:#000;
+@paybox:rgba(40,56,71,0.95);
+@tit1:#333;
+@tit2:#666;
+@tit3:#b2b2b2;
+@txt1:#999;
+@txt2:#ccc;
+@white:#fff;
+@pinkgrey:#dbdbdb;
+@activebg:#E2E2E2;
+@grey:#e5e5e5;
+@lightgrey:#f4f4f4;
+@modelblue: #9AE1FF;
+@bodybg: #f5f5f5;
+.border-line-grey{
+  border-style: solid;
+  -webkit-border-image:  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAALUlEQVQImWN88ODBfwY0wMLAwMAgLy/PCBN4+PDhfyZ0VQwMDAxYBVlgWpAFAbVJC08j6LRdAAAAAElFTkSuQmCC)  2 stretch;
+  border-image:  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAALUlEQVQImWN88ODBfwY0wMLAwMAgLy/PCBN4+PDhfyZ0VQwMDAxYBVlgWpAFAbVJC08j6LRdAAAAAElFTkSuQmCC)  2 stretch;
+  border-width:0;
+}
+.border-line-light{
+  border-style: solid;
+  -webkit-border-image:  url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAK0lEQVR42mJ8//79fwY0wMLAwMAgICDACBP48OHDfyYGLACrIAtMC7IgYADH6wupMs8SRAAAAABJRU5ErkJggg==")  2 stretch;
+  border-image:  url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAK0lEQVR42mJ8//79fwY0wMLAwMAgICDACBP48OHDfyYGLACrIAtMC7IgYADH6wupMs8SRAAAAABJRU5ErkJggg==")  2 stretch;
+  border-width:0;
+}
+.border-line-yellow{
+  border-style: solid;
+  -webkit-border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAK0lEQVQImWP8fGXmfwYGhv8MCMDI8PnKzH9IAgyfr8z8x8SABWAVZMRmJgD24A+BBToq2AAAAABJRU5ErkJggg==")  2 stretch;
+  border-image:  url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAK0lEQVQImWP8fGXmfwYGhv8MCMDI8PnKzH9IAgyfr8z8x8SABWAVZMRmJgD24A+BBToq2AAAAABJRU5ErkJggg==")  2 stretch;
+  border-width:0;
+}
+.icon-bus{
+  background-image: url("//pic.c-ctrip.com/h5/train/bus-icon_v2.png?v=20160317");
+  background-repeat: no-repeat;
+  background-size: 7rem 5rem;
+}
+
+.pseudo{
+  position: absolute;
+  content: "";
+}
+.flex{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex-box{
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.rotating(@rotate: 45deg){
+  -webkit-transform:rotate(@rotate);
+  -moz-transform:rotate(@rotate);
+  transform:rotate(@rotate);
+}
+.border-radius(@radius: 4px){
+  -webkit-border-radius:@radius;
+  -moz-border-radius:@radius;
+  border-radius:@radius;
+}
+.arr-grey{
+  border-top: .1rem solid @txt2;
+  border-right: .1rem solid @txt2;
+}
+.arr-blue{
+  border-top: .1rem solid @blue;
+  border-right: .1rem solid @blue;
+}
+.arr-white{
+  border-top: .1rem solid @white;
+  border-right: .1rem solid @white;
+}
+.arr-trans{
+  border-top: .1rem solid rgba(255,255,255,0.4);
+  border-right: .1rem solid rgba(255,255,255,0.4);
+}
+/*按钮定义*/
+.btn-active{
+  .pseudo;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  z-index:0;
+  background-color:rgba(0,0,0,.1)
+}
+
+.radius-line{
+  border-width: 1px;
+  border-style:solid;
+  .pseudo;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  .border-radius(8px);
+  box-sizing: border-box;
+  -webkit-transform: scale(.50);
+  transform: scale(.50);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  z-index:0;
+}
+
+.btn-blue{
+  .border-radius();
+  background: @blue;
+  border: none;
+  color: @white;
+  position:relative;
+  &:active:after{.btn-active;}
+}
+.btn-blue-light{
+  .border-radius();
+  background: @lightblue;
+  border: none;
+  color: @white;
+  position:relative;
+  &:active:after{.btn-active;}
+}
+
+.btn-orage{
+  .border-radius();
+  background: @orage;
+  border: none;
+  color: @white;
+  position:relative;
+  &:active:after{.btn-active;}
+}
+
+.btn-grey{
+  .border-radius();
+  background: #c7c7c7;
+  border: 0;
+  box-shadow: none;
+  color: @white;
+  text-shadow:none;
+  position:relative;
+  &:active:after{.btn-active;}
+}
+.btn-white{
+  .border-radius();
+  background: @white;
+  color: @blue;
+  position:relative;
+  &:before{border-color: @blue;.radius-line;}
+  &:active:after{.btn-active;}
+}
+.btn-white-light{
+  .border-radius();
+  background: @white;
+  color: @blue;
+  position:relative;
+  &:before{border-color: @pinkgrey; .radius-line;}
+  &:active:after{.btn-active;}
+}
+.btn-white-active{
+  background: @activebg;
+  color: #066F9B;
+}
+.pos-cent{
+  left: 50%;
+  top:50%;
+}
+.clearfix{
+  content: "";
+  display: block;
+  clear: both;
+}
+.ellipsis{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  position: relative;
+}
+
+.container1 > div, .container2 > div, .container3 > div {
+  width: .3rem;
+  height: .3rem;
+  background-color: #333;
+  border-radius: 100%;
+  position: absolute;
+  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+  animation: bouncedelay 1.2s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.spinner .spinner-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.container2 {
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+.container3 {
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.circle1 { top: 0; left: 0;}
+.circle2 { top: 0; right: 0;}
+.circle3 { right: 0; bottom: 0;}
+.circle4 { left: 0; bottom: 0;}
+
+.container2 .circle1 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.container3 .circle1 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.container1 .circle2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.container2 .circle2 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+.container3 .circle2 {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+
+.container1 .circle3 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+
+.container2 .circle3 {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+
+.container3 .circle3 {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+
+.container1 .circle4 {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+
+.container2 .circle4 {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+
+.container3 .circle4 {
+  -webkit-animation-delay: -0.1s;
+  animation-delay: -0.1s;
+}
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+}
+/*!less define end*/

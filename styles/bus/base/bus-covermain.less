@@ -1,0 +1,116 @@
+#headerview{height: 2.2rem !important;}
+
+
+.cm-keyboard-list:before,.cm-keyboard-list:after {
+	content: "";
+	display: table
+}
+
+.cm-keyboard-list:after {
+	clear: both
+}
+
+.cm-keyboard-list {
+	font-size: 16px
+}
+
+.cm-keyboard-list li {
+	float: left;
+	text-align: center;
+	width: 33%;
+	line-height: 2.7rem;
+	border: 1px solid #dbdbdb;
+	border-width: 1px 1px 0 0;
+	box-sizing: border-box;
+	font-size: 1rem; font-weight: bold;
+}
+
+.cm-keyboard-list li:active {
+	background-color: #efefef
+}
+
+.cm-keyboard-list li:nth-of-type(3n+3) {
+	width: 34%;
+	border-right: none
+}
+
+.cm-keyboard-list li:last-of-type,.cm-keyboard-list li:nth-last-of-type(3) {
+	background-color: #e2e2e2
+}
+
+.cm-keyboard-list .icon-del {
+	top: 2px
+}
+.cm-keyboard-list li:nth-last-of-type(3){
+	background-color: transparent;
+	&:active{
+		background-color: #EFEFEF;
+	}
+}
+.cm-keyboard-list li:last-of-type:active{
+	background-color: #CCC;
+}
+.cm-pop--num-keyboard .cm-keyboard-bar .btn-secondary{
+	display: inline-block;
+	.border-radius;
+	background-color: @blue;
+	color: #FFF;
+	font-size: .8rem;
+	&:active{
+		background-color: @blue;
+		color:@tit3;
+	}
+}
+.cm-pop .cm-pop-bd{position: relative; z-index: 9;}
+.cui-layer{ font-size: 16px;
+	position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 2100;
+    border-radius: 10px;
+    padding: 5px;
+	&.bus-orderdetail{padding: 5px 0;}
+}
+// 日历中出发样式
+.train_depart{display: block; color: #FFF; font-size: 14px; padding-top: 0px;}
+ul.cm-day-list .cm-field-price{color: #ff7d13;}
+// @-webkit-keyframes upIn{
+// 	0%{
+// 		opacity:0;
+// 		-webkit-transform:scale(1.2,1.2);
+// 		transform:scale(1.2,1.2);
+// 	}
+// 	100%{
+// 		opacity:1;
+// 		-webkit-transform:scale(1,1);
+// 		transform:scale(1,1);
+// 	}
+// }
+// @keyframes upIn{
+// 	0%{
+// 		opacity:0;
+// 		-webkit-transform:scale(1.2,1.2);
+// 		transform:scale(1.2,1.2);
+// 	}
+// 	100%{
+// 		opacity:1;
+// 		-webkit-transform:scale(1,1);
+// 		transform:scale(1,1);
+// 	}
+// }
+// @-webkit-keyframes upOut{
+// 	0%{
+// 		opacity:1;
+// 	}
+// 	100%{
+// 		opacity:0;
+// 	}
+// }
+// @keyframes upOut{
+// 	0%{
+// 		opacity:1;
+// 	}
+// 	100%{
+// 		opacity:0;
+// 	}
+// }

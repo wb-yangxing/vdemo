@@ -1,0 +1,30 @@
+.book-disney-fill{
+  .tit{
+    background:@blue;padding:0 .75rem 0 2.1rem;line-height:2.2rem;color:@white;font-size:.8rem;position:relative;
+    &:before{width:1rem;height:1rem;.pseudo;background-position:0 -2.75rem;left:.75rem; top:50%;margin-top:-.6rem}
+    span{font-size:.65rem;
+      i{margin-left:.25rem;}
+    }
+  }
+}
+.book-disney-bd{
+  li{
+    padding:.35rem 0;position:relative;overflow:hidden;
+    .line25{line-height:1.25rem;}
+    .line70{line-height:3.5rem}
+    .cpinkgray{font-size:.6rem}
+    .numcontainer{position:absolute; right:0; top:50%;margin-top:-.825rem}
+    .book-disney-date{
+      float:right;margin-right:.75rem;
+      label{
+        width: 3.5rem;margin:.4rem 0 0 .4rem; position:relative;.btn-white-light;color: @tit1;display:inline-block;text-align:center;line-height:1.2rem;padding-top:.2rem;
+        .bus-price{color:@orage;}
+        &.current{
+          .btn-white;position: relative;
+          &:after{width: .9rem;height: .9rem;.pseudo;background-position:-5.5rem -2.5rem;right: 0;bottom: 0}
+        }
+      }
+    }
+  }
+}
+.book-disney-btn{margin:.75rem}

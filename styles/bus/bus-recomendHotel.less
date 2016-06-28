@@ -1,0 +1,57 @@
+/*酒店推荐*/
+i[class^="hotel-icon-"] { display: inline-block; background-image: url(//pic.c-ctrip.com/h5/hotel/hotel-icon-v3.png); background-repeat: no-repeat; background-size: 5rem 18.75rem; vertical-align: middle; text-indent: -9999px; }
+.hotel-g-list{
+  background: #fff; border-top-width: 1px;overflow: hidden;
+  // &.hotel-g-tab{border-top-width: 0px;}
+  &.plat-bt0{border-top-width: 0;}
+  li{width: 100%;box-sizing: border-box;overflow: hidden; border-bottom-width: 1px;padding: 0 .5rem 0 0;position: relative; line-height: 1.05rem;}
+  li.tit{
+    padding-left: .7rem;line-height: 2rem;
+    em{color: @orage;margin: 0 .1rem}
+    &.flex{padding: 0 ; border-bottom: 0;
+      span{
+        .flex-box; padding: 0 .4rem; .ellipsis; border-bottom-width: 1px; color: @blue;text-align: center;
+        .icon-hot{width: 1.4rem;height: 0.8rem;color:@red;vertical-align: middle;margin: -.2rem 0 0 .3rem;font-size:1rem;}
+        &.current{border-width: 0px 1px 0 1px; color: #333;}
+      }
+    }
+  }
+  li.more{text-align: center; padding-right: 0;
+    a{display: block;line-height: 2rem;color: @blue;}
+  }
+  .hotel-g-proimg {
+    width: 4.4rem; height: 3.5rem; position: relative; float: left; overflow: hidden;margin-right: .5rem;background: #f2f2f2 url(//pic.c-ctrip.com/h5/hotel/hotel-loading-default.png) center center no-repeat;background-size: 1.35rem 1.45rem;
+    img {width: 4.4rem; height: 3.5rem; margin: -1px;float: left;vertical-align: middle;}
+  }
+  .hotel-g-cbd,.list-c{overflow: hidden;}
+  h4 {padding-top: .25rem;font-size: .75rem; padding-right: 3.2rem;}
+  .rate-num {color: @blue;margin-right: .25rem;line-height: 1rem; margin-right: 2.5rem;}
+  .cgray{font-size: .6rem;}
+  /*.hotel-icon-wifi-small {background-position: -36px -127px; }
+  .hotel-icon-park-small {background-position: -36px -145px; }
+  .ico-txt em {padding: 0 2px;font-size: 12px; border-radius: 2px;white-space: nowrap; margin-left: 2px;}
+  .ico-1{border: 1px solid #84cfee; color: #099fde;}
+  .ico-2{border: 1px solid #ffcc89; color: #ffaa16;}*/
+  .price-num {
+    color: #666; font-size: .6rem; position: absolute; right: .5rem; top:.25rem;
+    .num{color: #ff7d13; font-size: .9rem; line-height: 1rem; font-weight: normal; margin-right: .1rem;}
+    small{padding-right: .15rem;}
+  }
+  &.hide{display: none;}
+  &.trans{opacity: 0;}
+  .item:active, .more:active{background-color: @lightgrey; }
+  .tag {
+    border: 1px solid #ff9a14;
+    color: #ff9a14;
+    padding: .1rem .3rem;
+    margin-left: .3rem;
+    font-size: .6rem;
+    border-radius: .1rem;
+  }
+}
+.hotel-g-list + .mt10{margin-top:.5rem;}
+.hotel-g-l{
+  margin: .5rem 0 .5rem .75rem ;position: relative;display: block;
+  h4{padding-top: 0;font-size: .65rem;color: @orage}
+  &:after{width: 3rem;height: 2.1rem;.pseudo;background: url("//pic.c-ctrip.com/h5/hotel/hotel-icon.png") no-repeat -7rem -16.7rem;background-size: 10rem 25rem;right: 0;top: 50%;margin-top: -1.05rem;}
+}

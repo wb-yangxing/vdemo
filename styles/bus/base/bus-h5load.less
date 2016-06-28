@@ -1,0 +1,95 @@
+.h5{
+	.loadFailed-box{
+		padding: 4rem 1rem 1.5rem;
+	    text-align: center;
+	    font-size: .8rem;
+	    color: #666;
+	    .btns{
+	    	padding: 1.5rem 0;
+	    }
+	    .btn-retry{
+	    	background-color: #52bceb;
+    	    color: #FFF;
+    	    padding: .5rem 2.5rem;
+    	    border-radius: 4px;
+	    }
+	}
+	.bus-list-noresults{
+		// margin-left: 65px;
+	}
+	.cp-h5-main.bus{
+		zoom:1;
+		&:after{
+			width: 5rem;
+			height: 5rem;
+			position: absolute;
+			content: "";
+			top: 50%;
+			margin-top: -2.5rem;
+			left:0;
+			background-image: url(//pic.c-ctrip.com/h5/train/dolphins_fail.png);
+			background-size: 5rem 5rem;
+			background-repeat: no-repeat;
+		}
+	}
+	.cp-h5-main.coupon{right: 2rem; top: 1.25rem;}
+	// H5中 showLoading样式
+	.loading-layer{
+		background-color: #fff;
+    width: 112px;
+    height: 27px;
+    padding-top: 85px;
+    border-radius: 7px;
+    z-index: 10000;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -56px;
+    margin-top: -56px;
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+		&:before,&:after{
+			background-image:url("//pic.c-ctrip.com/h5/train/base64-1.png");
+			background-repeat: no-repeat;
+	    position: absolute;
+	    content: "";
+	    background-size: 135px auto;
+		}
+		&:before{
+			width: 64px;
+	    height: 57px;
+	    background-position: -72px 0;
+	    top: 20px;
+	    left: 25px;
+		}
+		&.no-youyou:before{opacity: 0;}
+		&:after{
+			width: 69px;
+	    height: 69px;
+	    background-position: 0 0;
+	    top: 10px;
+	    left: 20px;
+	    -webkit-animation: loading 1s linear 0s infinite;
+	    animation: loading 1s linear 0s infinite;
+		}
+	}
+	.mapGuide-mask{top: 2.2rem;}
+	.cm-calendar .cm-calendar-hd{top: 2.2rem !important;}
+}
+@-webkit-keyframes loading{
+	0%{
+		-webkit-transform:rotate(0)
+	}
+	100%{
+		-webkit-transform:rotate(360deg)
+	}
+}
+@keyframes loading{
+	0%{
+		transform:rotate(0)
+	}
+	100%{
+		transform:rotate(360deg)
+	}
+}

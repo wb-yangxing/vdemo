@@ -1,0 +1,172 @@
+.bus-book-box{margin-bottom: 50px}
+/*访客登录*/
+.bus-book-login{
+  border-bottom-width: 1px;background:@white;line-height: 2.2rem;padding: 0 .5rem;color: @tit1;margin-bottom: 5px;
+  .login-btn{height: 1.5rem;float: right;padding: 0 10px;margin-top: .35rem;.btn-orage;}
+}
+.btn-add{width:4rem;height:1.5rem;float: right;margin: .5rem .5rem 0 0;font-size: .8rem;.btn-blue;}
+.btn-add2{
+  width: 50%; height: 1.1rem; float: left; margin: .5rem 0;  background: @white; color: @blue;
+  &:first-child{border-right-width: 1px;}
+}
+
+.bus-qpr p{color: @tit3;font-size: .65rem;line-height: .75rem;margin:-.5rem 0 .25rem;}
+.bus-qpr-list{
+ overflow: hidden;
+  span{
+    width: 30.5%;margin:0 2% .4rem 0; float: left;text-align: center;line-height: 1.75rem;font-size: .8rem;position:relative;.btn-white-light;color: @tit1;overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    em{.ellipsis;width:85%;margin:0 auto;display:block}
+    &.current{
+      .btn-white;position: relative;
+      &:after{width: .9rem;height: .9rem;.pseudo;background-position:-5.5rem -2.5rem;right: 0;bottom: 0}
+    }
+  }
+  .qpr-add-new i{color:@blue;margin-right:.3rem}
+}
+// 蓝色漏空按钮
+.btn-edit{
+  width:3.25rem;height:1.5rem;right: .5rem;top:.35rem;.btn-white; position: absolute;-webkit-transition: border-color .3s ease-in-out, color .3s ease-in-out;
+  i{width: .25rem;height: .25rem;.arr-blue;display: inline-block;vertical-align: middle;}
+  i.arr-down{.rotating(135deg);margin:-.15rem 0 0 .25rem;}
+  i.arr-up{.rotating(-45deg);margin:.15rem 0 0 .25rem;}
+}
+.btn-edit.disabled{
+  color: @txt2;
+  &:before{border-color: @pinkgrey;}
+  i{.arr-grey}
+}
+/*价格支付*/
+.pay-box{
+  height:2.2rem;background: @paybox;line-height: 2.2rem;padding: 0 .5rem;position: fixed; left: 0;right: 0; bottom: 0; z-index: 990;
+  .pay-price{
+    font-size: 1rem;font-weight: 700;color: @orage;
+    dfn{font-weight: 400;font-size: .8rem;margin-right: .25rem}
+  }
+  .pay-txt{font-size: .65rem;padding:0 .4rem;color: @tit3; display: inline-block; line-height: 2.2rem;}
+  .btn-pay{width:4.75rem;height:1.7rem;float: right;margin-top:5px;font-size:.85rem;.btn-orage;}
+  .pay-tip{position: absolute;font-size: 1rem;color: @orage;top: 0;}
+}
+.pay-detail{
+  position: fixed;left: 0;bottom: 2.2rem;right:0; z-index: 980;
+  .bus-list{border-top-width:0;color: @tit2;}
+  .bus-order-tic-detail{line-height:1.25rem;margin:0 .75rem .25rem 0;}
+}
+.use_coup p{margin-right: 4rem; .ellipsis; font-size: .7rem; color: @tit2;}
+.use_coup .cprice{margin: -2.2rem 1rem 0 0;}
+.right_gray{color:@txt1;}
+.bus-list .right_gray{margin-right: 1rem;}
+
+/* 套餐还没有开始做*/
+
+.bus-book-package{
+  padding: 0 .75rem;line-height: 2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 1.75rem;
+  &.ord-arr-grey:after{right: .75rem;border-top-width:1px;}
+  // dd,dt{position: relative; border-top: 0;}
+  // .bus-info{
+  //   text-align: left;padding: 10px 0 10px 30px;
+  //   p{font-size: 16px;color: @tit1}
+  //   a{color: @blue;font-size: 11px;}
+  // }
+  // .bus-info:before{width: 20px;height: 14px;.icon;.pseudo;background-position: -35px 0;left: 0;top: 15px;}
+  // .tic-info{
+  //   height: auto;padding: 10px 0 10px 30px;
+  //   .tic-info-list{
+  //     .border-line-grey;border-right-width: 1px;width: 75%;float: left;
+  //     li{
+  //       margin-bottom:5px;height: 30px;line-height: 30px;
+  //       .name{width: 50%;float: left;text-overflow:ellipsis;white-space:nowrap;overflow: hidden}
+  //       .date{width: 45%;height: 30px;background: @grey;float: left;.border-radius;text-indent: 10px;position: relative}
+  //       .date:after{width: 0;height: 0;line-height: 0;.pseudo;right:10px;top:12px;border-top: 5px solid @txt2;border-bottom: 0 none; border-left: 5px solid transparent; border-right: 5px solid transparent;}
+  //     }
+  //     li:last-child{margin-bottom: 0;}
+  //   }
+  //   .tic-info-list2{
+  //     li{
+  //       margin-bottom:5px;height: 30px;line-height: 30px;
+  //       .name{width: 55%;float: left;text-overflow:ellipsis;white-space:nowrap;overflow: hidden}
+  //       .date{width: 30%;float: left;background: transparent;font-size: 13px;color: @tit3}
+  //     }
+  //     li:last-child{margin-bottom: 0;}
+  //   }
+  //   .tic-info-detail{
+  //     width: 20%;height: 100%;position: absolute;top: 0;right:0;padding-left: 15px;z-index: 10;
+  //     span{width:100%;position: absolute;color:@blue;font-size:12px;text-align: right;line-height:15px;left:0;top:50%;margin-top: -5px}
+  //   }
+  // }
+  // .tic-info:before{width: 17px;height:20px;.icon;.pseudo;background-position:-180px 0;left: 0;top: 14px;}
+}
+/*验证码弹层*/
+.pop_box_yzm_refresh:after{
+  background: url("//pic.c-ctrip.com/h5/train/train_add1.png?v=20150324") no-repeat;
+  background-size: 200px 150px;
+  content: "";position: absolute;
+}
+.bus_checkActivity_box{position: relative;}
+.bus_checkActivity_box .cui-pop-box{position: fixed;top: 50%;left: 50%;margin-left: -140px;margin-top: -140px;}
+.pop_box_yzm{background: #efefef}
+.pop_box_yzm p{padding: 20px 20px 15px;text-align: left}
+.pop_box_yzm .cui-roller-btns{background: #efefef;padding: 5px 20px 20px; border-top: 0;}
+.pop_box_yzm p.warning{color: #f00;text-align: center;padding: 5px 20px;font-size: 12px; min-height: 18px;}
+.pop_box_yzm_list{margin: 0px 20px 10px;overflow: hidden}
+.pop_box_yzm_list li{margin: 10px 0}
+.pop_box_yzm_input{width:120px;height:35px;background: #fff;border:1px solid #c8c8c8;border-radius:2px;margin-right: 5px; padding: 0 5px;}
+.pop_box_yzm_pic{width: 65px;height: 32px;display: inline-block;background: #ccc;vertical-align: middle;margin-right: 5px; text-align: center;font-size: 12px;color: #FFF;line-height: 32px;}
+.pop_box_yzm_pic img{height:100%; width: 100%;}
+.pop_box_yzm_orage,.pop_box_yzm_grey{width: 110px;height: 35px;display: inline-block;vertical-align: middle;color: #fff;border-radius: 5px;}
+.pop_box_yzm_refresh{width: 35px;height: 35px;background: #099fde;border-radius: 5px;display: inline-block;vertical-align: middle;position: relative}
+.pop_box_yzm_refresh:after{width:25px;height:21px;left:5px;top:7px;background-position: -65px -50px}
+.pop_box_yzm_orage{background: #FF9A14}
+.pop_box_yzm_orage.gray{background: #ccc;text-align: center;line-height:35px}
+.cui-btns-sure.yellow{background: #ff9913; color:#FFF; width: 100%; display: block;}
+.cui-btns-sure.gray{background: #CCC; color:#FFF;}
+.big{font-size: 16px;}
+
+/*X abtest*/
+// .bus-listdate.bus-x-date.bus-x-date2{margin-top: -1px}
+// .bus-x-list.bus-x-list2{
+//   margin:5px 5px 0;background:@white;.border-radius;padding: 10px;min-height: auto;
+//   dd{position: relative}
+//   p{padding-right: 65px}
+//   .btn-book{right: 0}
+//   .torage{font-size: 12px}
+//   dt{
+//     border-top:1px dashed #E0E0E0;margin-top: 10px;padding-top: 10px;line-height: 1em;font-size: 13px;color: @tit2;
+//     i{
+//       float: right;color: @blue;padding-right: 20px;position: relative;line-height: 14px;
+//       &:after{width: 12px;height: 12px;border: 1px solid @blue;.border-radius(50%);text-align: center;line-height: 12px;position: absolute;content:"i";color:@blue;font-size: 11px;right: 0;top: 0}
+//     }
+//   }
+//   &.disabled{
+//     color: @txt2;
+//     .cpinkgray,.bus-price strong,.bus-price dfn,.torage{color: @txt2;}
+//     .btn-book{.btn-grey}
+//   }
+// }
+
+/*春*/
+// .i-chun{
+//   padding-left: 46px;position: relative;overflow: hidden;
+//   &:after{width: 36px;height: 36px;.pseudo;background: url("//pic.c-ctrip.com/h5/train/i-chun.png");background-size: 36px 36px;left: 0;top: 50%;margin-top: -18px}
+// }
+// .pay-box .sale {font-size: .65rem; color: #FFF;
+//   i{font-size: .55rem; background-color: @orage; padding: 1px 2px; margin:0 .2rem 0 .2rem; position: relative; top: -2px; border-radius: 2px;}
+// }
+.book-disney-tab{
+  li{
+    position:relative;font-size:.8rem;
+    &.tit{
+      border-bottom:0!important;padding:0 .5rem 0 0; height: 2.4rem; overflow: hidden;
+      &:before{width:1rem;height:1rem;content:"";display:inline-block;background-position:0 -1.5rem;vertical-align:middle;margin:-.2rem .4rem 0 0}
+      span{
+        color:@blue;font-size:.65rem;
+        i{margin-left:.25rem;}
+      }
+    }
+    &.ord-arr-grey{
+      margin-left:.75rem;padding-left:0;border-bottom:1px!important;
+      span{margin-right:1.25rem;font-size:.65rem}
+      &:last-child{border-bottom:0px!important;}
+    }
+
+  }
+}

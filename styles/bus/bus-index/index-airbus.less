@@ -1,0 +1,38 @@
+.airbus-tab-mod{
+  background:@white;height: 2.5rem; line-height: 2.5rem;
+  li{
+    &.cui-tab-current{ font-size:.8rem }
+    &:nth-of-type(2).cui-tab-current ~ .cui-tab-scrollbar{ -webkit-transform:translate3d(120%, 0, 0); -moz-transform:translate3d(120%, 0, 0); -ms-transform:translate3d(120%, 0, 0); transform:translate3d(120%, 0, 0) }
+  }
+  .cui-tabnum2{width:42%;margin-left:4%;}
+  .cui-tab-scrollbar{height: .2rem;}
+}
+.airbus .bus-index-sel-bd{ padding-top:.5rem;}
+
+.sel-airbus-box{
+  li{
+    position:relative;.border-line-grey;border-bottom-width:1px; margin-left:1.8rem;padding-left:.1rem;
+    &:last-child{border-bottom-width:0;}
+    strong{
+      font-size:.9rem;font-weight:400;line-height:2.5rem; display:block; /*margin-right: 2.3rem;*/ opacity: 1; -webkit-transition: opacity .3s ease-in-out; transition: opacity .3s ease-in-out;
+      &.transparent{opacity: 0;}
+      &:active{color:@blue;}
+      // &.cpinkgray{color:@txt1;}
+    }
+    .chage{
+      width:2.3rem;height:5rem;position:absolute;background:@white;right:0;top:0; z-index:5;text-align:center;
+      .icon-chage{color:@txt2;font-size:1.3rem;line-height:5rem;}
+      &:active .icon-chage{color:@blue;}
+    }
+    .city{
+      width:1.8rem;height:5rem;position:absolute;left:-1.8rem; top:0;
+      .icon-airto,.icon-fromair{font-size:3.2rem;line-height:5rem;margin-left:-1rem;color:#E0E0E0}
+    }
+    .date{
+      width:1.8rem; height:2.5rem;position:absolute; left:-1.8rem; top:0;
+      .icon-calendar{font-size:.9rem;line-height:2.5rem;color:#E0E0E0;margin-left:.1rem}
+    }
+    .arr-right{width:6px; height:6px;border-top: .1rem solid #e0e0e0;border-right: .1rem solid #e0e0e0;.rotating(45deg);position:absolute; right:.5rem; top:50%; margin-top:-4px;}
+  }
+}
+.sel-airbus-btn{width:100%; height:2.25rem;.btn-orage;font-size:1rem;margin-top:.5rem;}

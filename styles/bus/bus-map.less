@@ -1,0 +1,85 @@
+/*
+.bus_map .map_g_btn{width: 40px;height: 35px;line-height:35px;background-color:rgba(0,0,0,.7);-webkit-border-radius:3px;border-radius:3px;position:absolute;left:10px;}
+.bus_map .map_btn_back{top:25px;}
+.bus_map.uc .map_btn_back{top:50px;}!*iphone5s uc 9.6.7.431 地址栏遮住返回按钮*!
+.bus_map .map_btn_back:before{width:10px;height:10px;content:"";position:absolute;top:50%;left:50%;margin:-6px 0 0 -3px;border-right:#fff 2px solid;border-bottom:#fff 2px solid;-webkit-transform:rotate(135deg);-moz-transform:rotate(135deg);-ms-transform:rotate(135deg);transform:rotate(135deg);}
+.bus_m_center {text-align:center;}
+.bus_m_center p{text-align:center;}
+.bus_m_center span{text-align:left;}
+.bus_map_tip {background: #0da3ff;display: inline-block;padding:5px 10px 0 10px;line-height:18px;-webkit-border-radius:5px;border-radius:5px;-webkit-box-sizing: border-box;box-sizing: border-box;max-width:100%;color:#fff;position: relative;}
+.bus_map_tip:before {width:0;height:0;border-top:8px rgba(0,0,0,.7) solid;border-left:8px solid transparent;border-right:8px solid transparent;display:inline-block;content:"";position: absolute;left:50%;bottom:-8px;margin-left:-8px; }
+.bus_map_tip:after {width:0;height:0;border-top:8px solid transparent;border-left:8px solid transparent;border-right:8px solid transparent;display:inline-block;content:"";position: absolute;left:50%;bottom:-7px;margin-left:-8px; }
+
+.bus_map_tip i {position: absolute;top:-1px;left:-1px;}
+.bus_map_tip .map-tip-w{max-width: 100px;}
+.bus_map_tip span,.bus_map_tip .ellips b{display:block;}
+.bus_map_tipw {width:200px;}
+.bus_map_tip .ellips b {text-align: center; font-weight: normal;}
+.bus_current_tip {background: rgba(0,0,0,.7);color:#FFF;padding:6px 10px;}
+
+.map_btn_lead{position: absolute;top: 10px;right: 10px;background-color:rgba(0,0,0,.7);color:#FFF;line-height: 35px; padding:0 15px;border-radius:5px }
+
+.list_st_border.bus_stations_bottom{width: 100%;border-width: 1px 0 1px 0;max-height: 265px; overflow: auto; left:0; bottom:-265px;}
+.list_st_border.bus_stations_bottom.active{bottom: 42px;}
+.bus_map_loading{position: absolute;top: 50%;left: 50%;background-color: rgba(255,255,255,0.9);height: 40px;width: 150px;border-radius: 4px;box-shadow: 1px 3px 5px #DDD;-webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);color: #999;text-align: center;line-height: 40px;}
+.bus_scale{width: 50px;text-align: center;}
+.bus_m_center.blue, .bus_m_center.gray{-webkit-transform: translate(-50%, -120%); transform: translate(-50%, -120%);width: 310px;}
+.bus_m_center.blue .bus_map_tip{background-color: #0da3ff; color: #FFF;border:#0058c1 1px solid;}
+.blue .bus_map_tip:before{border-top:8px #0058c1 solid; }
+.blue .bus_map_tip:after{border-top:8px #0da3ff solid; }
+.gray .bus_map_tip:before{border-top: 8px #999 solid;}
+.gray .bus_map_tip:after{border-top: 8px #aaa solid;}
+.bus_m_center.gray .bus_map_tip{background-color: #aaa; color: #FFF;border:#999 1px solid;}
+.buslist_map .amap-info{width:310px;}*/
+
+.bus-map{
+  color:@tit1;
+  .bus-map-cnt {
+    position:absolute;left:0;top:0;right:0;bottom:0;
+  }
+  &.uc .map_btn_back{top:50px;}
+  .blue-icon {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(50, 133, 255);
+    opacity: 0.9;
+    .border-radius(50%);
+    border-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border: 3px solid white;
+  }
+}
+.bus-map-addr{
+  cursor: pointer;
+  height:1.5rem;padding:0 .75rem 0 1.5rem;white-space:nowrap;position:absolute;
+  border-radius: .75rem .75rem .75rem 0;
+  -webkit-border-radius: .75rem .75rem .75rem 0;
+  background:rgba(255,255,255,.85);-webkit-box-shadow:0 0 2px rgba(0,0,0,.5);-moz-box-shadow:0 0 2px rgba(0,0,0,.5);box-shadow:0 0 2px rgba(0,0,0,.5);line-height:1.5rem;font-size:.7rem;
+  &:before{width:1.1rem;height:1.1rem;.border-radius(50%);background:#01B3FF;.pseudo;left:.2rem;top:.2rem;}
+  &.current:before {background: #F55D23;}
+  &:after{width:.65rem;height:.75rem;.pseudo;background:url("//pic.c-ctrip.com/h5/train/bus_map.png") -1.25rem 0;background-size:2rem 2.5rem; top:.35rem; left:.4rem}
+}
+.bus-map-icon{width:1.15rem;height:1.55rem;z-index:99;background:url("//pic.c-ctrip.com/h5/train/bus_map.png");background-size:2rem 2.5rem;}
+.bus-map-tips{
+  z-index:100;background:@white;position:fixed;left:0; right:0;bottom:0;-webkit-box-shadow:0 0 2px rgba(0,0,0,.5);-moz-box-shadow:0 0 2px rgba(0,0,0,.5);box-shadow:0 0 2px rgba(0,0,0,.5);padding:.5rem;
+  .title{font-size:.9rem;margin-bottom:.25rem;}
+  .tag-blue{background:@lightblue;color:@white;.border-radius(2px);line-height:.85rem;font-size:.6rem;padding:0 .1rem;vertical-align:middle;margin:-.1rem 0 0 .25rem;height:.85rem;display:inline-block}
+  p{
+    padding:.1rem 0 .1rem 2rem;position:relative;line-height:1rem; color: @txt1;
+    label{position:absolute;left:0; top:.1rem;}
+  }
+}
+.bus-map-btn{
+  .flex;width:100%;overflow:hidden;.border-line-grey;border-top-width:1px;padding-top:.5rem;margin-top:.5rem;
+  button{
+    .flex-box;background:@white;height:1.2rem;.border-line-grey;border-left-width:1px;margin-left:-1px;color:@blue;
+    i{display:inline-block;width:.65rem; height:.75rem;background:url("//pic.c-ctrip.com/h5/train/bus_map.png");background-size:2rem 2.5rem;vertical-align:middle;margin:-.1rem .4rem 0 0;}
+    .bus-map-nav{background-position:-1.25rem -.8rem}
+    .bus-map-shift{background-position:-1.25rem -1.6rem;}
+  }
+}
+.map_g_btn{width: 40px;height: 35px;line-height:35px;background-color:rgba(0,0,0,.7);-webkit-border-radius:3px;border-radius:3px;position:absolute;left:10px;z-index: 10;}
+.map_btn_back{top:25px;}
+.map_btn_back:before{width:10px;height:10px;content:"";position:absolute;top:50%;left:50%;margin:-6px 0 0 -3px;border-right:#fff 2px solid;border-bottom:#fff 2px solid;-webkit-transform:rotate(135deg);-moz-transform:rotate(135deg);-ms-transform:rotate(135deg);transform:rotate(135deg);}

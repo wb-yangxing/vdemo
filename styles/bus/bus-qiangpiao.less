@@ -1,0 +1,83 @@
+.qiangpiao-index{
+  .qiangpiao-bg{width: 12.65rem;height: 12.8rem;display: block;margin: 12% auto 0;background: url("//pic.c-ctrip.com/h5/train/bus-qiangpiao-bg.png") no-repeat;background-size: 12.65rem 12.8rem}
+  .qiangpiao-flow{
+    text-align: center;color:@tit2;
+    li{margin: .15rem 0}
+    i{width: .9rem;height: .9rem;display: inline-block;vertical-align: middle;background: rgba(255,183,28,0.64);.border-radius(50%;);color:@white;margin:-.1rem .3rem 0 0;line-height: .9rem;text-align: center}
+  }
+  .qiangpiao-index_btn{width:11.15rem;height:2.2rem;display: block;.btn-orage;margin: .75rem auto;font-size: .8rem;}
+}
+.qiangpiao-index_txt{padding:0 .75rem;text-align: center;color:@tit2;/*position: fixed;*/left: 0;bottom: .75rem;right: 0;font-size: .6rem;.ellipsis;}
+.qiangpiao-box {
+  li{position: relative ;}
+  li.qiangpiao-modify{
+    overflow: hidden; padding: .75rem .75rem .75rem 0;
+    .from{width: 35%;float: left;height:2.75rem;text-align: left}
+    .to{width: 35%;float: right;height:2.75rem;text-align: right;}
+    .chage{
+      width: 20%; height: 2.5rem; position: absolute; left: 40%; top: 1rem;
+      i{
+        width: 1.7rem;height: 1.7rem;position: absolute;.pos-cent;margin:-.85rem 0 0 -.85rem;line-height:.85rem;text-align:center;line-height:1.7rem;
+        &:first-child{font-size:1.6rem;color:@blue;}
+        &:last-child{font-size:.9rem;color:#cfecf8;}
+        &.trans{-webkit-transition: -webkit-transform .4s ease-out; transition: transform .4s ease-out; -webkit-transform:rotate(180deg); transform:rotate(180deg);}
+        &.disabled{width:1.5rem;height:1.5rem;border-radius: 50%; border: 2px solid #A1DCF3; text-indent:-9999px;}
+      }
+    }
+
+    p{font-size:.6rem;color: @txt1;line-height:1rem }
+    strong{font-size: .9rem;font-weight: 400;line-height: 1rem}
+    .ico-arr{width: 1.8rem;position: absolute; left: 50%; top: 2.25rem; margin-left: -1.3rem;}
+  }
+  .bus-add dt{color: @tit2;font-size: .65rem}
+  .cui-zl-load{width: 1rem;position: absolute;right: 1rem;top: .65rem;margin: 0}
+}
+
+.qiangpiao-order-list{
+  li{margin: .5rem; background-color: #fff; .border-radius;position: relative; z-index: 9;}
+  .order-hd {position: relative; margin: 0 .25rem; padding:.1rem .25rem; height: 1.75rem; line-height: 1.75rem; border-bottom-width:1px;color: @tit2 }
+  .order-cont {
+    position: relative; padding: .5rem .5rem .25rem;
+    h2{max-height: 2.2rem; margin-bottom: .25rem; font-size: .9rem; line-height: 1.2rem; color: #000; font-family: Arial,"Lucida Grande",Verdana,"Microsoft YaHei",hei; font-weight: normal; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+    .order-info {
+      color: @tit1; margin: .15rem 0 0 0; .ellipsis;
+      .date {display: inline-block; }
+      .hour {margin-left: .25rem; display: inline-block; }
+    }
+  }
+  .order-cont:after { clear: both; content: '.'; display: block; height: 0; line-height: 0; font-size: 0; overflow: hidden; }
+  .order-ft{
+    padding: 0px .5rem .5rem; text-align: right; position: relative; z-index: 2;
+    .btn-order-detail{width:3.75rem;height:1.5rem;.btn-white;}
+  }
+}
+
+/*飘带*/
+/*.qiangpiao-ribbon{height: 2rem;margin: 0 .5rem .5rem;text-align: center;line-height: 2rem;position: relative;color: #fff;overflow: hidden;}
+.qiangpiao-ribbon.ribbon-blue{background: #52bce8;border-left:6px solid #3e9bc2; }
+.qiangpiao-ribbon.ribbon-red{background: #ec6941;border-left: 6px solid #d75a34;}
+.qiangpiao-ribbon.ribbon-green{background: #80c269;border-left: 6px solid #74b15e;}
+.qiangpiao-ribbon.ribbon-grey{background: #a6a6a6;border-left: 6px solid #8f8c8c;}
+.qiangpiao-ribbon:before,.qiangpiao-ribbon:after{.pseudo;background: #F5F5F6;width: 25px;height: 25px;right: -10px}
+.qiangpiao-ribbon:before{top: 0;.rotating(20deg)}
+.qiangpiao-ribbon:after{bottom: 0;.rotating(-20deg)}*/
+
+// 抢票提示
+.bus-rob-announ{
+  position: fixed; bottom:0; left: 0; right: 0; background-color: #F3F3F3; height: 2.2rem; line-height: 2.2rem; z-index: 99; padding-left: .75rem; color: #333;  box-shadow: 0px -1px 1px #DDD; font-size: .75rem;
+  &.ord-arr-grey:after{right: .75rem;}
+}
+.bus-rob-announ:active{background-color: #DDD;}
+.bottom-nav .new:before{content: "new"; position: absolute; color: #FFF; background-color: #ee3825; padding: 0px .25rem; .border-radius(.5rem); left: 20%;top: .1rem; line-height: .75rem;font-size: .55rem;}
+
+/*适配*/
+@media only screen and (max-device-height : 600px) {
+  .qiangpiao-index{
+    .qiangpiao-bg{margin-top: .25rem}
+    .qiangpiao-flow{margin-top: -1.5rem}
+    .qiangpiao-index_btn{margin: .25rem auto 2.5rem}
+  }
+
+}
+
+.btn-add{width:4rem;height:1.5rem;float: right;margin: .5rem .5rem 0 0;font-size: .8rem;.btn-blue}

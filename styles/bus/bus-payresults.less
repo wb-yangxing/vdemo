@@ -1,0 +1,34 @@
+/*支付状态*/
+.bus-payreslts{
+  border-top-width: 1px;border-bottom-width: 1px;background: @white;margin-top: .5rem;
+  .bus-payok,.bus-payfail{padding: 1.25rem 30% 1.25rem 1.25rem;position: relative}
+  h4{font-size: .8rem;line-height: 1.25rem;}
+  p{
+    line-height: 1rem;font-size: .65rem;color: @tit3;
+    span.orage{color: @orage;}
+  }
+  .bus-payok:after,.bus-payok img{width: 5rem;height:  5rem;.pseudo;top:50%;margin-top: -2.5rem;right: .5rem;background-size:  5rem;background-repeat:no-repeat }
+  .bus-payok img{content: none; width: auto;}
+  .bus-payok:after{background-image: url("//pic.c-ctrip.com/h5/train/dolphins_ok.png")}
+  .bus-payok.no_after:after{display: none;}
+}
+.bus-book-return{
+  border-top-width: 1px;padding: 0 .75rem;line-height: 2.2rem;overflow: hidden;
+  span{font-size: .8rem;}
+  i{margin:-.1rem .3rem 0;vertical-align:middle;font-size:.8rem;color:@blue}
+  .bus-book-return-btn{width: 4rem;height:1.5rem;.btn-orage;float: right;margin-top: .3rem;}
+}
+.bus-payreslts-btnbox{
+  margin: .5rem .75rem 0;overflow: hidden; padding-bottom: .5rem;
+  button{width: 48%; font-size: .8rem;}
+  button:first-child{float: left;}
+  button:last-child{float: right;}
+  .btn-order,.btn-trip{.btn-white-light;height: 2.2rem;}
+  .btn-order i,.btn-trip i{display: inline-block;vertical-align: middle;margin: -.1rem .3rem 0 0;color:@blue;}
+  .btn-pay{.btn-orage;height: 2.2rem;}
+}
+.btn_backtic{-webkit-transition: height .2s;overflow: hidden;}
+.app_dowmload {
+  padding: .75rem;display: block;overflow: hidden;
+  & img {width: 100%;}
+}

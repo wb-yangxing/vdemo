@@ -1,0 +1,125 @@
+/*节日图标配置*/
+
+nav
+.bus-index-nav{
+  .tab-scrollbar{
+    em{background:#f00!important;}
+    &:before,&:after{background:#f00!important;}
+    &:before{}
+    &:after{}
+  }
+}
+
+
+/*bottom*/
+.bus-index-bottom{
+  li{
+    position:relative;
+    .icon-order{
+      &:after{width:3rem; height:3rem;.pseudo; top:-.3rem;left:50%;margin-left:-1.5rem;background:#f00;z-index:10;}
+    }
+    .icon-serve{
+      &:after{width:3rem; height:3rem;.pseudo; top:-.3rem;left:50%;margin-left:-1.5rem;background:#f00;z-index:10;}
+    }
+    .icon-coupon{
+      &:after{width:3rem; height:3rem;.pseudo; top:-.3rem;left:50%;margin-left:-1.5rem;background:#f00;z-index:10;}
+    }
+  }
+}
+
+/*汽车票*/
+.sel-bus-box{
+  .city{
+    .icon-fromto{
+      &:before{display:none;}
+      &:after{width:1rem;height:3rem;.pseudo;left:0; top:50%;margin-top:-1.5rem;background:#f00; }
+    }
+  }
+  .chage{
+    .icon-chage{
+      &:before{display:none;}
+      &:after{width:1rem;height:3rem;.pseudo;left:50%; top:50%;margin:-1.5rem 0 0 -.5rem;background:#f00; }
+    }
+  }
+  .date{
+    .icon-calendar{
+      &:before{display:none;}
+      &:after{width:1rem;height:1rem;.pseudo;left:0; top:50%;margin-top:-.5rem;background:#f00; }
+    }
+  }
+}
+.sel-bus-btn{
+  position:relative;background:#f00;
+  &:before,&:after{width:1.5rem;height:3rem;.pseudo; top:50%;margin-top:-1.5rem; background:#d99;}
+  &:before{left:-.2rem}
+  &:after{ right:-.2rem}
+}
+
+/*机场巴士*/
+.sel-airbus-box{
+  .city{
+    .icon-fromto{
+      &:before{display:none;}
+      &:after{width:1rem;height:3rem;.pseudo;left:0; top:50%;margin-top:-1.5rem;background:#f00; }
+    }
+  }
+  .chage{
+    .icon-chage{
+      &:before{display:none;}
+      &:after{width:1rem;height:3rem;.pseudo;left:50%; top:50%;margin:-1.5rem 0 0 -.5rem;background:#f00; }
+    }
+  }
+  .date{
+    .icon-calendar{
+      &:before{display:none;}
+      &:after{width:1rem;height:1rem;.pseudo;left:0; top:50%;margin-top:-.5rem;background:#f00; }
+    }
+  }
+}
+.sel-airbus-btn{
+  position:relative;background:#f00;
+  &:before,&:after{width:1.5rem;height:3rem;.pseudo; top:50%;margin-top:-1.5rem; background:#d99;}
+  &:before{left:-.2rem}
+  &:after{ right:-.2rem}
+}
+
+/*景区直达*/
+.sel-mpv-box{
+  .icon-location{
+    &:before{display:none;}
+    &:after{width:.8rem; height:.8rem;position:relative;display:inline-block;vertical-align:middle;background:#f00;content:"";}
+  }
+  &:after{display:none;}
+  .sel-mpv-scenic{
+    border-color:#f00;position:relative;
+    &:before,&:after{width:2.5rem; height:2.5rem;.pseudo; top:0;background:#f00;}
+    &:before{left:-.2rem;}
+    &:after{ right:-.2rem;background-image:none;}
+  }
+}
+
+/*船票*/
+.sel-ship-box{
+  .chage{
+    .rotating(0deg)!important;
+    .icon-chage{
+      &:before{display:none;}
+      &:after{width:2rem;height:2rem;.pseudo;left:50%; top:50%;margin:-1rem 0 0 -1rem;background:#f00; }
+    }
+  }
+  .date{
+    .icon-calendar{
+      &:before{display:none;}
+      &:after{width:1rem;height:1rem;.pseudo;left:0; top:50%;margin-top:-.5rem;background:#f00; }
+    }
+  }
+}
+.sel-ship-btn{
+  position:relative;background:#f00!important;
+  &:before,&:after{width:1.5rem;height:3rem;.pseudo; top:50%;margin-top:-1.5rem; background:#d99;}
+  &:before{left:-.2rem}
+  &:after{ right:-.2rem}
+}
+/*tit*/
+.sel-mpv-recommend .tit:before{background:#f00}
+.ship-index-show .tit:before{background:#f00}

@@ -1,0 +1,45 @@
+/*X页*/
+.bus-listdate.bus-x-date{
+  margin-top: -1px;background: @white;border-top-width: 1px;color: @blue;
+  li.yesterday:after, li.tomorrow:after{.arr-blue}
+  li.disabled{color: @txt2 !important;}
+  li.yesterday.disabled:after,li.tomorrow.disabled:after{.arr-grey}
+}
+.bus-x-list{
+  position: relative; min-height: 6rem; border-bottom-width: 0px;background-color: transparent;
+  li{position: relative;padding: .5rem 0 .5rem .5rem; background-color: #FFF; margin: .25rem; .border-radius;border-bottom-width:0!important;}
+  p{padding-right: 4rem;line-height: 1rem;height: 1rem;overflow: hidden;white-space: nowrap; text-overflow: ellipsis; font-size: .8rem;
+    .iconfont{font-size:.7rem;margin:0 0 0 .2rem;display:inline-block;vertical-align:middle;color: @blue;}
+    &.bottomLine{padding: .3rem .1rem 0 0;margin: .25rem .5rem -.1rem 0 ; border-top: 1px dashed #e0e0e0; color: #666; font-size: .6rem;
+      span{float: right;color: @blue;position: relative;}
+    }
+  }
+  p.cpinkgray{font-size: .55rem;}
+  .btn-book{padding:0 .6rem;height: 1.5rem;.btn-orage;position: absolute!important;right: .5rem;top: .65rem; font-size: .75rem;}
+  .btn-book.blue{.btn-blue;}
+  .btn-book.disabled,.btn-book.blue.disabled{.btn-grey;}
+  .tag-fan,.tag-sheng,.tag-red{vertical-align: middle;margin-top: -.25rem;display: inline-block}
+  .bus-price{color:@orage;}
+  .bus-price span:before{
+    content: "¥";
+  }
+  .tag-orage2{ position: relative; top: -2px; z-index: 9;}
+}
+.car-tips{
+  position: absolute;top: 25%;left: 8%;right: 8%;background: @white;.border-radius(8px);z-index: 1000;padding: 1rem .75rem .5rem;
+  &:after{width: .05rem;height: 1rem;background: @white;.pseudo;top: -1rem;right: 1.15rem;}
+  .closed{
+    width: 1.25rem;height: 1.25rem;border:1px solid @white;.border-radius(50%);position: absolute;right: .5rem;top: -2.3rem;
+    &:before,&:after{width: .8rem;height: 1px;background: @white;.pseudo;top: 50%;left:50%;margin: -.05rem 0 0 -.4rem}
+    &:before{.rotating(45deg)}
+    &:after{.rotating(-45deg)}
+  }
+  .car-img{width: 100%;height: auto;}
+  .car_info{margin-top: .75rem}
+  .car-logo{width: 1rem;height: .75rem;display: inline-block;vertical-align: middle;margin: -.1rem .25rem 0 0;}
+  .recomd-st{text-align: right; }
+}
+
+@media only screen and (max-width : 16rem){
+  .car-tips {margin:0 -.5rem;min-width: 13rem;}
+}

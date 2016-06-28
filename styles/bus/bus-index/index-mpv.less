@@ -1,0 +1,96 @@
+/*
+.sel-mpv-box{
+  margin:.5rem .75rem .75rem .5rem;font-size:.8rem;color:@tit2; position:relative;
+
+  .sel-mpv-city{
+    !*margin-left:.5rem;*!
+    span{color:@blue;margin-right:.5rem;}
+    .icon-location{color:@lightblue; margin-right:.2rem;}
+  }
+  .sel-mpv-scenic{
+    line-height:2.2rem;border:2px solid @lightblue;padding:0;.border-radius(6px); margin-top:.3rem;text-align:center;color:@tit1;font-size:.9rem;
+    .icon-magn{color:@txt2; margin-right:.5rem;display:inline-block;}
+  }
+  &:after{width:1.2rem; height:1.1rem;.pseudo;right:.8rem;bottom:-.35rem;background:url("//pic.c-ctrip.com/h5/train/bus-mpv-input.png") no-repeat;background-size:1.2rem 1.1rem;}
+}
+
+.sel-mpv-recommend{
+  margin-top:.5rem;padding:1rem .75rem .75rem;background:@white;overflow:hidden;
+  .tit{
+    line-height:1.25rem;font-size:16px;font-weight:400;color:@tit2;
+    &:before{width:.25rem;height:.75rem;background:@lightblue;position:relative;content:"";display:inline-block;vertical-align:middle; margin:-.15rem .5rem 0 0;}
+  }
+  .sel-mpv-hot{
+    margin:.5rem 0 1.5rem;
+    img{width:7.4rem; height:4.2rem;float:left;margin-right:15px;}
+    .sel-mpv-hot-info{
+      overflow:hidden;
+      strong{font-size:1rem; margin-top:.3rem;font-weight:400; display:block;}
+      .site{
+       width:100%;.ellipsis;font-size:.6rem;color: @txt1;position:relative;
+        &:before{content:"下车";position:relative;display:inline-block; color: @txt1;vertical-align:middle;float:right}
+      }
+      .type{
+        font-size:.6rem;color: @txt1; margin-top:.5rem;
+        span{color:@orage;}
+      }
+    }
+
+  }
+  .sel-mpv-other{
+    li{
+      width:32%;margin:.35rem 2% 0 0;float:left; position:relative;.border-radius;overflow:hidden;
+      &:nth-child(3n+3){margin-right:0}
+      img{width:100%; height:3rem; float:left;}
+      .sel-mpv-more{background:rgba(9,159,222,.5);width:100%; height:3rem; float:left;}
+      .mask{width:100%;height:100%;background:rgba(0,0,0,.4);position:absolute;left:0; top:0;}
+      .attract{line-height:1.5rem;text-align:center;font-size:1.1rem;color:@white;position:absolute;left:0;right:0; top:50%; margin-top:-.75rem; z-index:5;}
+    }
+  }
+}*/
+.mpv-tab-mod{
+  background:@white;height: 2.5rem; line-height: 2.5rem;width:95%;padding-right:5%;position:relative;
+  .cui-tab-mod{
+    background:@white;height: 2.5rem; line-height: 2.5rem;font-size:.7rem;color:@txt1;
+    li {
+      &.cui-tab-current{font-size:.8rem;}
+      &:nth-of-type(2).cui-tab-current~.cui-tab-scrollbar {-webkit-transform: translate3d(135%, 0, 0); -moz-transform: translate3d(135%, 0, 0); -ms-transform: translate3d(135%, 0, 0); transform: translate3d(135%, 0, 0) }
+      &:nth-of-type(3).cui-tab-current~.cui-tab-scrollbar {-webkit-transform: translate3d(270%, 0, 0); -moz-transform: translate3d(270%, 0, 0); -ms-transform: translate3d(270%, 0, 0); transform: translate3d(270%, 0, 0) }
+      &:nth-of-type(4).cui-tab-current~.cui-tab-scrollbar {-webkit-transform: translate3d(405%, 0, 0); -moz-transform: translate3d(405%, 0, 0); -ms-transform: translate3d(405%, 0, 0); transform: translate3d(405%, 0, 0) }
+    }
+  }
+  .cui-tabnum4{width:19%;margin-left:3%;}
+  .cui-tab-scrollbar{height: .2rem;}
+  .icon-i-list{position:absolute;color:#D8D8D8; right:.5rem; top:0;font-size:.9rem;z-index:10;}
+  &:after{width:18%;height:2.5rem;.pseudo;background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, #fff 50%);background: linear-gradient(left, rgba(255,255,255,0) 0%, #fff 50%); top:0; right:0;}
+}
+.mpv .bus-index-sel-bd{ padding-top:.5rem;}
+
+.sel-mpv-box{
+  li{
+    position:relative;.border-line-grey;border-bottom-width:1px; margin-left:1.8rem;padding-left:.1rem;
+    &:last-child{border-bottom-width:0;}
+    strong{
+      font-size:.9rem;font-weight:400;line-height:2.5rem; display:block; /*margin-right: 2.3rem;*/ opacity: 1; -webkit-transition: opacity .3s ease-in-out; transition: opacity .3s ease-in-out;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      &.transparent{opacity: 0;}
+      &:active{color:@blue;}
+      // &.cpinkgray{color:@txt1;}
+    }
+    .chage{
+      width:2.3rem;height:5rem;position:absolute;background:@white;right:0;top:0; z-index:5;text-align:center;
+      .icon-chage{color:@txt2;font-size:1.3rem;line-height:5rem;}
+      &:active .icon-chage{color:@blue;}
+    }
+    .city{
+      width:1.8rem;height:5rem;position:absolute;left:-1.8rem; top:0;
+      .icon-mpvto,.icon-frommpv{font-size:3.2rem;line-height:5rem;margin-left:-1rem;color:#E0E0E0}
+    }
+    .date{
+      width:1.8rem; height:2.5rem;position:absolute; left:-1.8rem; top:0;
+      .icon-calendar{font-size:.9rem;line-height:2.5rem;color:#E0E0E0;margin-left:.1rem}
+    }
+    .arr-right{width:6px; height:6px;border-top: .1rem solid #e0e0e0;border-right: .1rem solid #e0e0e0;.rotating(45deg);position:absolute; right:.5rem; top:50%; margin-top:-4px;}
+
+  }
+}
+.sel-mpv-btn{width:100%; height:2.25rem;.btn-orage;font-size:1rem;margin-top:.5rem;}

@@ -1,0 +1,80 @@
+.search_wrap {
+    position: relative;overflow: hidden;padding: .5rem;background: @blue;
+    input {background: #FFF}
+}
+.search_box {
+    position: relative; float: left; width: 100% ;-webkit-transition: width .3s ease-out; transition: width .3s ease-out; z-index:11;
+    &:before,&:after{ .pseudo; z-index: 9 }
+    &:before {left: .3rem; top: 50%; margin-top: -.4rem; width: .6rem; height: .6rem; border: 1px solid #bcbcbc; .border-radius(50%) }
+    &:after{left: 1rem;top: 50%;margin-top: .1rem;width: 1px;height: .4rem;background: #bcbcbc}
+}
+.search_input { width: 100%; height: 1.75rem; padding: 0 1rem 0 1.4rem; background-color: #fff; border-radius: 4px; line-height: normal }
+.search_cancel {display: none;float: left;width: 20%;line-height: 35px;text-align: center;font-size: 16px;color: #1491c5;background: transparent;border: 0;margin-top: 2px}
+.close_icon {
+    display: none; position: absolute; z-index: 10; top: 8px; right: 4px; width: 16px; height: 16px; border-radius: 30px; background: #b1b1b1;
+    &:before,&:after { position: absolute; content: ""; top: 4px; left: 7px; width: 2px;height: 8px;background: @white}
+    &:before {-webkit-transform: rotate(45deg);transform: rotate(45deg) }
+    &:after{-webkit-transform: rotate(-45deg);transform: rotate(-45deg)}
+}
+.search_box:after{-webkit-transform: rotate(-45deg);transform: rotate(-45deg)}
+.search_focus .search_box {width: 80%}
+.search_focus .close_icon,.search_focus .search_cancel {display: block }
+.search_input:focus {color: #000}
+
+/*城市选择*/
+.cui-citys-bd.bus{position:absolute;top: 2.75rem;bottom: 0; overflow: auto; width: 100%;}
+/*.cui-city-itmes .cui-city-n{border-top-width:1px;}*/
+.cui-city-itmes .cui-city-n li, .cui-city-associate.cui-city-n li{font-size: .7rem;border-bottom-width:1px; line-height: 2.2rem; color: @tit2;}
+.cui-city-itmes .cui-city-n li{padding: 0 1rem 0 .5rem;}
+.cui-city-associate.cui-city-n li{
+    padding: 0; border-bottom-width: 0px;
+    span{color: @orage;}
+}
+.cui-city-associate.cui-city-n p{
+    padding-left: 0; border-bottom-width: 1px;margin-left: .5rem;
+    &.city{
+        padding-left: .5rem;margin-left: 0;
+    }
+    &.more{
+        font-size: .6rem;color: @blue;
+        span{color: @orage;}
+    }
+}
+.cui-city-associate .hide{
+    display: none;
+}
+.cui-city-associate .station li{
+    border-top-width:1px;
+    border-bottom-width:0;
+    font-size: .6rem;
+    span{
+        color: red;
+    }
+}
+.cui-city-itmes .cui-city-n1 {overflow: hidden;padding: 0 1rem .5rem .5rem;}
+.cui-city-itmes .cui-city-n1 li {
+    float: left;width: 30%;height: 1.8rem;line-height: 1.8rem;text-align: center;margin: 2.5% 3% 0 0;padding: 0;box-sizing: border-box; position: relative; border-bottom-width: 0; border-radius: 3px; overflow: hidden; text-overflow: ellipsis;white-space: nowrap;
+    &:after{.radius-line;border-color:@grey; -webkit-transform: scale(.49); transform: scale(.49);}
+}
+.cui-city-itmes .cui-city-t {padding: .2rem 1rem .2rem .5rem;font-size: .6rem;border-bottom: 0; display: block;}
+.cui-city-itmes .cui-city-n li.current, .cui-city-associate.cui-city-n li.current{background-position: 90% center;color: @blue;}
+.cui-city-itmes .cui-city-n1 li.current{border-color: @blue; color:@blue; background: none;}
+.city_summary{position: fixed; top: 0; right: 0; width: 1.25rem; height: 100%; padding: 6.8rem 0 2.2rem; box-sizing: border-box; z-index: 110; font-size: .55rem; color: @blue;}
+.city_summary_list {
+    height: 100%; text-align: center; background: rgba(255,255,255,0.3);
+    .font_small {font-size: .45rem; height: 3.5714%;}}
+.city_summary_item {
+    position: relative; height: 3.5714%;
+    .city_selected {display: none; position: absolute; top: 0; left: -1.9rem; width: 2.5rem; height:2.5rem; text-align: center; line-height: 2.5rem; color: #fff; font-size: 1.2rem; margin: -95rem 0 0 -2.75rem; background: rgba(9,159,222,.5); .border-radius; z-index: 200; }
+    .city_selected:after{.pseudo;right: -.8rem;top: 50%; margin-top: -.2rem; width: 0; height: 0; border-width: .25rem .4rem; border-style: solid; border-color: transparent transparent transparent rgba(9,159,222,.5);}
+    &.current .city_selected{display: block;}
+}
+.bus-search-btn{
+    position: absolute;right: 0; top: .5rem; line-height: 1.75rem; width: 15%;background: transparent;color:@white; -webkit-transation: color .3s ease-in-out;
+    &.confirm{right: 15%;}
+    &.disabled{color:rgba(255,255,255,.35);}
+}
+
+.cui-city-associate li{
+    background-color: #FFF;
+}

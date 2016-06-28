@@ -1,0 +1,19 @@
+/*配送票*/
+.bus-distrib{
+  margin:0 1.75rem 0 .75rem;border-bottom: 1px dashed @grey;padding: .5rem 0;font-size: .75rem;line-height: 1.25rem;
+  label{width: 4rem;float: left;.ellipsis; }
+  .cpinkgray{line-height: .75rem;font-size: .6rem;}
+}
+.bus-distrib:last-child{border-bottom: 0}
+.bus-distrib2{
+  position: relative;line-height: 1.25rem;padding: .5rem 0;
+  dd{min-height: 1.25rem;}
+  p{line-height: 1.25rem;font-size: .6rem}
+  p:before{.clearfix}
+}
+.bus-distrib2.current:after{width: .6rem;height: .3rem;.arr-blue;.rotating(135deg);.pseudo;right: .75rem;top:50%;margin-top: -.3rem; }
+.bus-distrib2.disabled{
+  color: @tit3;
+  dt,.cprice{color: @tit3!important;}
+}
+.icon-qus{font-size:.8rem;color:@blue;vertical-align:middle;margin:-.1rem 0 0 .3rem}
