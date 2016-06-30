@@ -1,0 +1,279 @@
+<template>
+    <ul class="bus-list bus-search-list">
+        <!-- <li v-for="item in data">
+            <div class="time">
+                <strong class="line50">12:12</strong>
+            </div>
+            <div class="station">
+                <p class="from"><i class="i-shi"></i>出发城市车站出发城出发城市车站出发城</p>
+                <p class="to"><i class="i-guo"></i>南京</p>
+                <p class="models"><i class="iconfont"></i>大高一</p>
+            </div>
+            <div class="info">
+                <span class="tag-orage2">返</span><span class="bus-price"><dfn>￥</dfn><strong>660</strong></span>
+                <p class="tred">12 张</p>
+                <p class="cpinkgray">暂无耗时</p>
+            </div>
+        </li> -->
+        <li v-for="item in data" :class="{'disabled': !item.bookable}">
+            <div class="time" v-if="item.shiftType">
+                <strong>{{item.fromTime}}</strong>
+                <p>{{item.shiftDesc}}</p>
+                <span class="tag-blue2" v-show="item.shiftType == 1">流水班</span>
+                <span class="tag-blue2" v-show="item.shiftType == 2">加班车</span>
+            </div>
+            <div class="time" v-else>
+                <strong class="line50">{{item.fromTime}}</strong>
+            </div>
+            <div class="station">
+                <p class="from"><i class="i-shi"></i>{{item.fromStationName}}</p>
+                <p class="to" :class="{'duodian': item.toStationList}">
+                  <i :class="{'i-zhong': !item.isWayStation && !item.toStationList, 'i-cj': item.toStationList, 'i-guo': item.isWayStation}"></i>
+                  <span>{{item._toStationName}}</span>
+                  <span class="tblue" v-show="!item.pointBusExt && item.isWayStation">[过路车]</span>
+                </p>
+                <p class="models" v-if="item.newCar"><i class="iconfont"></i>{{item.newCar.newType}}<span class="tag-orage">舒适</span></p>
+                <p class="models" v-else><i class="iconfont">&#xe644;</i>{{item.busType}}</p>
+            </div>
+            <div class="info">
+              <span class="tag-orage2" v-if="item.cashBack">返</span>
+              <span class="tag-orage2" v-if="item.offsetActivityFlag">减</span>
+                <span class="bus-price"><dfn>¥</dfn>
+                  <strong>
+                    {{item.fullPrice.toString().split(".")[0]}}
+                    <small v-if="item.fullPrice.toString().split('.')[1]">.{{item.fullPrice.toString().split(".")[1]}}</small>
+                  </strong>
+                </span>
+                <p :class="{'cpinkgray':item.showTicketStyle == 1, 'torage': item.showTicketStyle == 2, 'tred':item.showTicketStyle == 3}">{{item.showTicketInfo}}</p>
+                <p class="cpinkgray">{{item.costTime || '&nbsp;'}}</p>
+            </div>
+        </li>
+    </ul>
+</template>
+
+<script>
+    module.exports = {
+        props: ['data'],
+        data: function(){
+            return{
+                msg: 'Hello World!'
+            }
+        },
+        methods: function(){
+
+        }
+    }
+</script>
+
+<style lang="less">
+    @import "../../../styles/define";
+    /*list*/
+    .bus-search-list{
+      border-top:0;border-bottom:0;
+      li{
+        overflow:hidden;line-height:1.2rem!important;padding:.6rem 0 .5rem;position:relative;margin-left:0!important; z-index: 9;
+        .time{
+          width:4.5rem;float:left;margin-left:.5rem;
+          strong{
+            font-size:1.1rem;font-family:"helvetica neue";font-weight:500;margin-bottom:-.05rem;display:inline-block;vertical-align:middle;
+            &.line50{line-height:2.4rem;margin-bottom:0}
+          }
+          p{font-size:.5rem}
+          .tag-blue2{margin:-.3rem 0 0 0}
+        }
+        .station{
+          position:absolute;left:5rem; right:4rem;top:.6rem; z-index: 9;
+          .from,.to{.ellipsis;padding-left:.85rem;position:relative;}
+          .from{
+            .i-shi{
+              &:before{width:.35rem; height:.35rem;.border-radius(50%);background:#01B3FF;.pseudo;left:.15rem; top:50%;margin-top:-.175rem;z-index:5;}
+              &:after{width:.15rem;height:.6rem;.pseudo;background:#DBF2FA;left:.25rem;top:50%;}
+            }
+            .i-guo{
+              &:before{width:.3rem; height:.3rem;.border-radius(50%);background:@white;.pseudo;left:.15rem; top:50%;margin-top:-.175rem;border:1px solid #01B3FF;z-index:5;}
+              &:after{width:.15rem;height:.6rem;.pseudo;background:#DBF2FA;left:.25rem;top:50%;}
+            }
+          }
+          .to{
+            font-size:.65rem;
+            .i-zhong{
+              &:before{width:.35rem; height:.35rem;.border-radius(50%);background:#01B3FF;.pseudo;left:.15rem; top:50%;margin-top:-.175rem;z-index:5;}
+              &:after{width:.15rem;height:.6rem;.pseudo;background:#DBF2FA;left:.25rem;top:0;}
+            }
+            .i-guo{
+              &:before{width:.3rem; height:.3rem;.border-radius(50%);background:@white;.pseudo;left:.15rem; top:50%;margin-top:-.175rem;border:1px solid #01B3FF;z-index:5;}
+              &:after{width:.15rem;height:.6rem;.pseudo;background:#DBF2FA;left:.25rem;top:0;}
+            }
+            .i-cj{
+              &:before{width:.3rem; height:.5rem;.border-radius(.15rem);background:@white;.pseudo;left:.15rem; top:50%;margin-top:-.175rem;border:1px solid #01B3FF;z-index:5;}
+              &:after{width:.15rem;height:.6rem;.pseudo;background:#DBF2FA;left:.25rem;top:0;}
+            }
+            &.duodian label{max-width:5rem;display:inline-block;.ellipsis;vertical-align:middle;margin-right:.1rem}
+          }
+          .models{
+            font-size:.65rem; color: @txt1;
+            .iconfont{display: inline-block; width:.75rem;height:.75rem;margin:-.15rem .1rem 0 0;color:@modelblue;}
+          }
+        }
+        .info{
+          width:4rem;float:right;text-align:right;margin-right:.5rem;
+          p{font-size:.65rem}
+          .tag-orage2{vertical-align:middle;text-align:center; position: relative; top: -2px; z-index: 9;}
+        }
+      }
+      li.disabled{
+        color:@txt2;
+        .i-shi,.i-zhong{
+          &:before{ background:@activebg !important; }
+          &:after{ background:#ededed !important; }
+        }
+        .i-guo,.i-cj{
+          &:before{ border:1px solid @activebg !important; }
+          &:after{ background:#ededed !important; }
+        }
+        .models .iconfont{color:@activebg!important;}
+        .bus-price dfn,.bus-price strong,.cpinkgray,.models, .tblue{color:@txt2!important;}
+        .tag-blue2{
+          border: 1px solid @txt2;
+          color: @txt2;
+        }
+        .tag-orage{border-color: @txt2; color: @txt2;}
+        .tag-orage2{background-color: @txt2;}
+      }
+    }
+
+    /*筛选*/
+    .bus-filterbar{
+      height: 2.4rem;border-top: 1px solid #293443; background: rgba(40,56,71,.95); overflow: hidden;.flex;position: fixed;left: 0;top: auto;right: 0;bottom: 0;z-index: 100;-webkit-transform:translateY(100%);
+      li{
+        .flex-box;text-align: center;font-size: .6rem;color:@txt2;position: relative; overflow: hidden;
+        .dot-byfilter{position: absolute; left: 50%; top: .4rem; width: .4rem;height: .4rem;margin-left: .6rem;background: @orage; border-radius: 50%; display: none;}
+        i{position: absolute;left: 50%;top: .2rem;width: 1rem;height: 1rem;margin-left: -.5rem;font-size:.9rem;}
+        &.current{
+          .dot-byfilter{ display:block; }
+        }
+        &:active{background: #283847;color:#30a8ff;}
+      }
+      p{margin-top: 1.35rem;}
+      &.hide, &.show{-webkit-transition: -webkit-transform .5s; transition: transform .5s;}
+      &.hide{-webkit-transform:translateY(100%);transform:translateY(100%);}
+      &.show{-webkit-transform:translateY(0);transform:translateY(0);}
+    }
+    .bus-filter-station-unlimited{
+      li{padding-left:.5rem;}
+      li.current{position: relative;color: @blue;}
+      li.current:after{width: .6rem;height: .3rem;border-left:2px solid @blue;border-bottom:2px solid @blue;.rotating(-45deg);.pseudo;right: 1.25rem;top:50%;margin-top: -.3rem; }
+    }
+    .bus-filter-station-list{
+      max-height: 11.85rem;overflow: auto;
+      li{
+        margin:0 .5rem;padding-left:.75rem;position: relative;padding-right: 2rem;.ellipsis;
+        .i-checkbox{right: .75rem;top:50%;margin-top: -.4rem;position:absolute!important;}
+        &.current{color: @blue;}
+        .nearby{
+          max-width:75%;float:left;.ellipsis;position:relative;
+        }
+        .tag-blue{display:inline-block;vertical-align:middle;}
+      }
+    }
+    .bus-filter-twoline{
+      overflow: hidden; background-color: @white;
+    }
+    .bus-filter-twoline-l{
+      width: 30%; float: left;height: 14.1rem;text-align: center; border-right-width: 1px;box-sizing: border-box; background-color: @bodybg;
+      li {
+        height: 2.9rem;line-height: 2.9rem;border-bottom-width: 1px;font-size: .75rem; margin-right: -1px;position: relative;
+        &.current {background: @white;}
+        &.dot:before { width: .4rem;height: .4rem;.pseudo;.pos-cent;margin: -.7rem 0 0 1.7rem;background: @orage;.border-radius(50%);}
+      }
+    }
+    .bus-filter-twoline-r{
+      width: 70%;float:left;background: @white;
+      .bus-filter-station-unlimited{
+        margin-left: .5rem;
+        li{
+          margin-left: .5rem;
+          &.current:after{ right:.75rem;}
+        }
+      }
+      .bus-filter-station-list{
+        margin-left: .5rem;
+        li{
+          margin: 0;
+
+          .nearby{
+            max-width:68%;float:left;.ellipsis;position:relative;
+          }
+        }
+
+      }
+    }
+    /*下车点*/
+    .bus-xcd{
+      background: @white;.border-radius(4px 4px 0 0);padding: 1rem .75rem;max-height: 75%;overflow: hidden;
+    }
+    .bus-xcd-hd{
+      height: 4.5rem;
+      .img-recomd{width: 85px;height: 55px;position: absolute;left: .5rem;top: 5px}
+      .recomd-pt{margin:0 0 .75rem 100px;overflow: hidden}
+      .bus-list-tips{border:0;text-align: center;margin-top: .5rem;color: #8B572A; background: #fff8e6;}
+    }
+    .bus-xcd-bd{
+      overflow: auto;max-height: 260px;
+    }
+    .bus-xcd-bt{
+      margin: .5rem .5rem 0; position: relative; z-index: 9;
+      .btn-big{
+        .btn-orage;width: 100%;height: 40px;font-size: .9rem;
+      }
+    }
+    .bus-xcd-list{
+      position:relative;overflow: hidden;
+      &:after{.pseudo;border-left: 1px dashed #E0E0E0;left: 1rem;top: .75rem;bottom: 1.25rem;}
+      li{
+        padding: .5rem 0 .5rem 1.95rem;position: relative;color: @txt1;
+        .fr{font-size: .65rem;margin-right: .75rem}
+        strong{font-size: .7rem;display: block;font-weight: 400}
+        p{font-size: .5rem;}
+        &:before{width: .4rem;height: .4rem;.border-radius(50%);.pseudo;left: .75rem;top: .75rem;border-width: 1px;border-style: solid;background: @white;z-index: 5}
+        &.from:before{border-color: @lightblue;}
+        &.to:before{border-color: @orage}
+        &.current{
+          color: @tit1;
+          strong{font-size: .9rem;font-weight: 600}
+          &:before{width: 1.15rem;height: 1.15rem;border:0;left: .45rem;top:.6rem;}
+          &:after{width: .95rem;height:.95rem;position: absolute;left: .55rem;top: .7rem;color: @white;line-height: .95rem;text-align: center;font-size: .55rem;z-index: 5;.border-radius(50%)}
+          &.from:before{background: #B8E6FC;}
+          &.to:before{background: #FFD7A2}
+          &.from:after{content:"上";background: @lightblue; }
+          &.to:after{content:"下";background: @orage; }
+        }
+      }
+    }
+    @media only screen and (max-width: 31rem) {
+      .bus-search-list li .st-els{max-width: 25%;}
+      .bus-list-recomd.flight-train .ft-station{max-width:1.75rem;}
+    }
+    @media only screen and (min-width: 400px) {
+      .bus-list-recomd.flight-train .ft-station{max-width:3rem;}
+    }
+    @media only screen and (max-height: 27.5rem) {
+      .bus-xcd{
+        max-height: 60%;
+        .bus-xcd-bd{max-height: 10rem;}
+      }
+    }
+    /*下车点 END*/
+
+    /*list引导*/
+    .bus-mask-filter{width:8.2rem; height:2.55rem;background:url("//pic.c-ctrip.com/h5/train/bus-map-tip.png") no-repeat;background-size:8.2rem 2.55rem;position:fixed;bottom:2.8rem;left:.8rem;z-index:1000}
+    .bus-mask-map{width:13.35rem;height:4.9rem;background:url("//pic.c-ctrip.com/h5/train/bus-map-tip2.png") no-repeat;background-size:13.35rem 4.9rem;position:absolute; right:.75rem!important; top:.5rem!important;left:auto!important;padding:0!important;}
+    /*list引导*/
+    .bus-list-mask{
+      position: absolute;z-index: 1000;left: 0;top:0;right: 0;bottom: 0;background: rgba(0,0,0,0.85);
+      &:after{width: 10.5rem;height: 9.75rem;.pseudo;background: url("//pic.c-ctrip.com/h5/train/list_mask.png") no-repeat;background-size: 10.5rem 9.75rem;left: 50%;top:8rem;margin-left: -5.25rem;}
+      .click{width:5.5rem; height:3rem;position:absolute;top:14.8rem;left:50%;z-index: 9;}
+    }
+    .bus-list-nomore{text-align: center;font-size: 0.6rem;color:@tit3;margin: 0.5rem 0 0.25rem;}
+
+</style>

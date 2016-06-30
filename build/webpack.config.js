@@ -25,7 +25,11 @@ module.exports = {
         extensions: ['', '.js', '.vue'],
         alias: {
             'coms': path.resolve(__dirname, '../components'),
-            'styles': path.resolve(__dirname, '../styles')
+            'styles': path.resolve(__dirname, '../styles'),
+            'service': path.resolve(__dirname, '../service'),
+            'common': path.resolve(__dirname, '../common'),
+            'models': path.resolve(__dirname, '../models'),
+            'config': path.resolve(__dirname, '../config')
         }
     },
     module: {
