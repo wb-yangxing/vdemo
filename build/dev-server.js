@@ -40,7 +40,7 @@ app.use(hotMiddleware)
 // app.use('./static', express.static('./static'))
 
 // 监听 8888端口，开启服务器
-app.listen(8888, function (err) {
+app.listen(5389, function (err) {
     if (err) {
         console.log(err)
         return

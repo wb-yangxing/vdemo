@@ -1,36 +1,58 @@
 <template>
     <div class="cm-header">
-            <span class="cm-header-icon fl">
+            <span class="cm-header-icon fl" @click="back">
                 <i class="icon-back"></i>
             </span>
-            <span class="cm-header-icon fr">
-                <i class="iconfont icon-map"></i><!--11-->
-            </span>
-        <h1 class="cm-page-title">
-            <span class="cm-title-l">上海 - 杭州</span>
-            <p class="cm-title-s">共12条</p>
+        <h1 class="cm-header-title">
+            <span class="cm-title-l">{{title}}</span>
         </h1>
     </div>
 </template>
 
 <script>
-    export default {
-        data () {
-            return {
-                msg: 'Hello World!'
-            }
+module.exports = {
+    props: ['title'],
+    events: {
+
+    },
+    methods: {
+        back: function(){
+            this.$dispatch('back')
         }
     }
+}
 </script>
 
-<style>
+<style lang="less">
 .cm-header{
-    top: 0;
-    height: 44px;
-    line-height: 44px;
+    font-size: .9rem;
+    height: 2.2rem;
+    line-height: 2.2rem;
     text-align: center;
     background-color: #099fde;
     color: #fff;
-    z-index: 960;
+    border-bottom: 1px solid #FFF;
+}
+.cm-header-title{
+    margin: 0 4rem;
+}
+.cm-header-icon{
+    width: 2.2rem;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    .icon-back{
+        &:before {
+            content: "";
+            display: inline-block;
+            width: .5rem;
+            height: .5rem;
+            vertical-align: middle;
+            border-left: .1rem solid #fff;
+            border-bottom: .1rem solid #fff;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            box-sizing: border-box;
+        }
+    }
 }
 </style>

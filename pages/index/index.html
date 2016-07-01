@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh" style="font-size:20px;">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
-		<title>首页</title>
-		<script>
-	      (function(doc, win) {
-	          var docEl = doc.documentElement,
-	              resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-	              recalc = function() {
-	                  var clientWidth = docEl.clientWidth;
-	                  if (!clientWidth) return;
-	                  if( clientWidth > 500){
-	                      clientWidth = 500;
-	                  }
-	                  var fontSize = 20 * (clientWidth / 375);
-	                  docEl.style.fontSize = fontSize + 'px';
-	                  var dpi = window.devicePixelRatio;
-	                  docEl.setAttribute('data-dpi', dpi);
-	              };
-	          if (!doc.addEventListener) return;
-	          win.addEventListener(resizeEvt, recalc, false);
-	          doc.addEventListener('DOMContentLoaded', recalc, false);
-	      })(document, window);
-	  </script>
-	</head>
-	<body>
-		<!-- vue的组件以自定义标签的形式使用 -->
-		<x-header :title="title"></x-header>
-	</body>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>首页</title>
+</head>
+
+<body>
+    <!-- vue的组件以自定义标签的形式使用 -->
+    <x-header :title="title" v-on:back="back"></x-header>
+    <ul class="cui-list-bar">
+        <li data-type="fromAirbus" class="J_from_airport">机场出发</li>
+        <li data-type="toAirbus" class="J_to_airport cond-bar-current">到达机场</li>
+    </ul>
+    <ul class="list_st_border mt10" id="J_airbus_searbox">
+        <li class="airbus_Plane ord-arr-grey from to cdarkgray">浦东国际机场</li>
+        <li class="ord-arr-grey airbus_to from cdarkgray">上海</li>
+        <li class="ord-arr-grey airbus_date" id="J_airbus_departdate" block="bus_home_time"><span>07月02日<i>明天</i></span></li>
+    </ul>
+    <button id="J_search_airbus" class="g_btn_s">查询</button>
+    <div id="J_search_history" class="airbus_sel_recent" style="display:none"></div>
+</body>
+
 </html>
